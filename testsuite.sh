@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 # tempdir for binaries
 export BASEDIR="$(mktemp -t -d restic-testsuite-XXXXXX)"
