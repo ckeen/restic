@@ -5,12 +5,12 @@ run restic init
 
 # first backup without dedup
 run restic backup "${BASE}/fake-data"
-size=$(du -sm "$RESTIC_REPOSITORY" | cut -f1)
+size=$(BLOCKSIZE=1M du -s "$RESTIC_REPOSITORY" | cut -f1)
 debug "size before: $size"
 
 # second backup with dedup
 run restic backup "${BASE}/fake-data"
-size2=$(du -sm "$RESTIC_REPOSITORY" | cut -f1)
+size2=$(BLOCKSIZ=1M du -s "$RESTIC_REPOSITORY" | cut -f1)
 debug "size after: $size2"
 
 # check if the repository hasn't grown more than 5%
