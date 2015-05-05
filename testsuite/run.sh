@@ -6,7 +6,7 @@ export dir=$(dirname "$0")
 export fake_data_file="${dir}/fake-data.tar.gz"
 
 prepare() {
-    export BASE="$(mktemp --tmpdir --directory restic-testsuite-XXXXXX)"
+    export BASE="$(mktemp -t -d restic-testsuite-XXXXXX)"
     export RESTIC_REPOSITORY="${BASE}/restic-backup"
     export RESTIC_PASSWORD="foobar"
     export DATADIR="${BASE}/fake-data"

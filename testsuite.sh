@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # tempdir for binaries
-export BASEDIR="$(mktemp --tmpdir --directory restic-testsuite-XXXXXX)"
+export BASEDIR="$(mktemp -t -d restic-testsuite-XXXXXX)"
 export BINDIR="${BASEDIR}/bin"
 export PATH="${BINDIR}:$PATH"
 export DEBUG_LOG="${BASEDIR}/restic.log"
