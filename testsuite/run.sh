@@ -13,7 +13,7 @@ prepare() {
     debug "repository is at ${RESTIC_REPOSITORY}"
 
     mkdir -p "$DATADIR"
-    (cd "$DATADIR"; tar xz) < "$fake_data_file"
+    tar -C "$DATADIR" -xzf "$fake_data_file"
     debug "extracted fake data to ${DATADIR}"
 }
 
